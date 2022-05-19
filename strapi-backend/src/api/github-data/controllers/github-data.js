@@ -53,6 +53,7 @@ module.exports = {
   },
   getAll: async ( ctx, next ) => {
     const users = await getUsers()
+    console.log(users)
     const array = await users.reduce( async ( data, user ) => {
       data = await data
       let temp = await getData( user )
