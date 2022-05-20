@@ -1,6 +1,7 @@
 'use strict';
 
-const { getGithubContributions } = require('github-contributions-counter')
+const { getGithubContributions } = require( 'github-contributions-counter' )
+require('dotenv').config()
 /**
  * A set of functions called "actions" for `github-data`
  */
@@ -20,7 +21,7 @@ const getUsers = async () => {
  const getData = async ( id ) => {
   return await getGithubContributions( {
     username: id,
-    token: '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'
+    token: process.env.TOKEN
   } ).then( ( r ) => {
     console.log(r)
     const calendar = r.data.data.user.contributionsCollection.contributionCalendar
@@ -39,7 +40,7 @@ const getUsers = async () => {
     const dailyContributions = calendar.weeks[ calendar.weeks.length - 1 ].contributionDays.pop()?.contributionCount
     return { username: id,  totalContributions, weeklyContributions, weeklyContributionsSum, dailyContributions }
   } ).catch( e => {
-    // console.log(e)
+    console.log(e)
     return "invalid user"
   })
 }

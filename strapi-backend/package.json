@@ -15,6 +15,7 @@
     "@strapi/plugin-users-permissions": "4.1.11",
     "@strapi/strapi": "4.1.11",
     "better-sqlite3": "7.4.6",
+    "dotenv": "^16.0.1",
     "github-contributions-counter": "^2.1.3"
   },
   "author": {
@@ -22,10 +23,6 @@
   },
   "strapi": {
     "uuid": "55370246-c300-49cb-a12c-9832db9c6f96"
-  },
-  "engines": {
-    "node": ">=12.x.x <=16.x.x",
-    "npm": ">=6.0.0"
   },
   "license": "MIT"
 }
