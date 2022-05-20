@@ -20,8 +20,9 @@ const getUsers = async () => {
  const getData = async ( id ) => {
   return await getGithubContributions( {
     username: id,
-    token: "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" 
+    token: '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'
   } ).then( ( r ) => {
+    console.log(r)
     const calendar = r.data.data.user.contributionsCollection.contributionCalendar
     const totalContributions = calendar.totalContributions
     let weeklyContributionsTemp = calendar.weeks.reduce( ( lastTwoWeeks, week, i ) => {
@@ -38,6 +39,7 @@ const getUsers = async () => {
     const dailyContributions = calendar.weeks[ calendar.weeks.length - 1 ].contributionDays.pop()?.contributionCount
     return { username: id,  totalContributions, weeklyContributions, weeklyContributionsSum, dailyContributions }
   } ).catch( e => {
+    // console.log(e)
     return "invalid user"
   })
 }
@@ -57,8 +59,10 @@ module.exports = {
     const array = await users.reduce( async ( data, user ) => {
       data = await data
       let temp = await getData( user )
+      console.log(temp)
       return data = [...data, temp]
     }, Promise.resolve( [] ) ).then( (arr) => {
+      console.log(arr)
         const totalContributions = arr.reduce( ( total, user ) => total += user.totalContributions, 0 )
         const weeklyContributionsSum = arr.reduce( ( total, user ) => total += user.weeklyContributionsSum, 0 )
         const weeklyContributions = [0,0,0,0,0,0,0]
