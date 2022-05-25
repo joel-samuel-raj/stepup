@@ -17,6 +17,15 @@ module.exports = {
         policies: [],
         middlewares: [],
       },
+    },
+    {
+      method: 'GET',
+      path: '/github/master',
+      handler: 'github-data.master',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
     }
   ],
 };

@@ -46,6 +46,18 @@ const getUsers = async () => {
 }
 
 module.exports = {
+  master: async ( ctx, next ) => {
+    try {
+      // console.log(getGithubContributions.getGithubContributions)
+      let temp = await getGithubContributions( {
+        username: 'joel-samuel-raj',
+        token: process.env.TOKEN
+      } )
+      ctx.body = temp.data
+    } catch (err) {
+      ctx.body = err;
+    }
+  },
   get: async ( ctx, next ) => {
     try {
       // console.log(getGithubContributions.getGithubContributions)

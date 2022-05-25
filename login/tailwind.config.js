@@ -9,8 +9,9 @@ module.exports = {
     extend: {
       colors: {
         primary: '#1600ff',
-        secondary: '#9a00ff'
-      },
+        secondary: '#9a00ff',
+        blacc: '#36393f'
+      }, 
       maxWidth: {
         'screen-3xl': '1920px',
       },
@@ -19,5 +20,6 @@ module.exports = {
         // => @media (min-width: 992px) { ... }
       }
     },
+    important: '#__next'
   }
 }
