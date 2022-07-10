@@ -87,6 +87,15 @@
       "target": "api::skill-progress.skill-progress",
       "inversedBy": "users"
     },
+    "phoneNumber": {
+      "type": "biginteger"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "profilePicture": {
+      "type": "string"
+    },
     "githubUsername": {
       "type": "string"
     }
