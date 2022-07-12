@@ -63,12 +63,6 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "userType": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::user-type.user-type",
-      "inversedBy": "users"
-    },
     "updateProgress": {
       "type": "relation",
       "relation": "manyToOne",
@@ -98,6 +92,11 @@
     },
     "githubUsername": {
       "type": "string"
+    },
+    "academicDetail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::academic-detail.academic-detail"
     }
   }
 }
