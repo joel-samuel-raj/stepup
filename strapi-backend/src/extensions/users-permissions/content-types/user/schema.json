@@ -97,6 +97,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::academic-detail.academic-detail"
+    },
+    "laptopDetails": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::laptopdetail.laptopdetail"
     }
   }
 }
